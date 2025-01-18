@@ -1,3 +1,14 @@
-.Navigation {
-  /* Styles for Navigation */
+.nav {
+  display: flex;
+}
+.link {
+  display: block;
+  padding: 24px 16px;
+  color: var(--main-color);
+  text-decoration: none;
+}
+
+.link:hover,
+.active span {
+  color: var(--button-hover);
 }

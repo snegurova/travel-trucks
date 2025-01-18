@@ -1,0 +1,26 @@
+.typography {
+  margin: 0;
+  padding: 0;
+  transition: color 0.5s ease;
+}
+
+.body2 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.text {
+  color: var(--text-color);
+}
+
+.main {
+  color: var(--main--main-color);
+}
+
+.heading {
+  color: var(--input-color);
+}
+
+.unset {
+  color: unset;
+}

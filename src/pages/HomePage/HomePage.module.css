@@ -1,0 +1,20 @@
+.heroWrapper {
+  background-image: url('../../assets/images/hero@1x.jpg');
+  background-image: image-set(
+    url('../../assets/images/hero@1x.webp') type('image/webp'),
+    url('../../assets/images/hero@1x.jpg') type('image/jpeg')
+  );
+  height: calc(100vh - var(--header-height));
+  background-size: cover;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min-resolution: 192dpi) {
+  .heroWrapper {
+    background-image: url('../../assets/images/hero@2x.jpg');
+    background-image: image-set(
+      url('../../assets/images/hero@2x.webp') type('image/webp'),
+      url('../../assets/images/hero@2x.jpg') type('image/jpeg')
+    );
+  }
+}
