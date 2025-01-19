@@ -12,16 +12,13 @@ const variantMapping = {
 };
 
 const Typography = (props) => {
-  const { children, component, variant, className, color = 'text' } = props;
+  const { children, component, variant, className, color } = props;
   const Component = component || variantMapping[variant];
   return (
     <Component
-      className={clsx(
-        styles.typography,
-        className,
-        styles[variant],
-        styles[color]
-      )}
+      className={clsx(styles.typography, className, styles[variant], {
+        [styles[color]]: !!color,
+      })}
     >
       {children}
     </Component>

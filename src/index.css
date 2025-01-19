@@ -5,6 +5,8 @@
   --main-color: #101828;
   --input-color: #f7f7f7;
   --header-height: 72px;
+  --white: #ffffff;
+  --button-color: #e44848;
 }
 body {
   font-family: 'Inter', serif;

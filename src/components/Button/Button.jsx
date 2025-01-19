@@ -1,11 +1,13 @@
 import React from 'react';
 import styles from './Button.module.css';
+import clsx from 'clsx';
 
-const Button = () => {
+const Button = ({ children, component, className, type }) => {
+  const Component = component || 'button';
   return (
-    <div className={styles.button}>
-      <Button />
-    </div>
+    <Component type={type} className={clsx(styles.button, className)}>
+      {children}
+    </Component>
   );
 };
 

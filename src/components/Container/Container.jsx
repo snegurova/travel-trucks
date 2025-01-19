@@ -1,8 +1,15 @@
+import clsx from 'clsx';
 import styles from './Container.module.css';
 
 const Container = (props) => {
-  const { children } = props;
-  return <div className={styles.container}>{children}</div>;
+  const { children, isFullHeight } = props;
+  return (
+    <div
+      className={clsx(styles.container, { [styles.fullHeight]: isFullHeight })}
+    >
+      {children}
+    </div>
+  );
 };
 
 export default Container;

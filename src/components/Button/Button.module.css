@@ -1,3 +1,17 @@
 .button {
-  /* Styles for Button */
+  display: inline-block;
+  padding: 16px 48px;
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  border: none;
+  text-decoration: none;
+  border-radius: 50px;
+  background-color: var(--button-color);
+  transition: background-color 0.5s ease;
+}
+
+.button:hover {
+  background-color: var(--button-hover);
 }

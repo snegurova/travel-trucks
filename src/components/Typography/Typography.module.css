@@ -4,6 +4,18 @@
   transition: color 0.5s ease;
 }
 
+.h1 {
+  color: var(--input-color);
+  font-weight: 600;
+  font-size: 48px;
+}
+
+.h2 {
+  color: var(--input-color);
+  font-weight: 600;
+  font-size: 24px;
+}
+
 .body2 {
   font-size: 16px;
   font-weight: 500;
@@ -19,8 +31,4 @@
 
 .heading {
   color: var(--input-color);
-}
-
-.unset {
-  color: unset;
 }

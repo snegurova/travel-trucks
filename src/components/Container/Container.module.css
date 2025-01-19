@@ -3,3 +3,7 @@
   padding: 0 64px;
   margin: 0 auto;
 }
+
+.fullHeight {
+  height: 100%;
+}

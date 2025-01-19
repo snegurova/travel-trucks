@@ -8,6 +8,17 @@
   background-size: cover;
 }
 
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.button {
+  margin-top: 40px;
+}
+
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
   only screen and (min-resolution: 192dpi) {
   .heroWrapper {
