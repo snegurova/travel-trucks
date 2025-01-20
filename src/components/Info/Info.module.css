@@ -1,3 +1,10 @@
-.Info {
-  /* Styles for Info */
+.info {
+  display: flex;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  gap: 4px;
+  align-items: center;
 }

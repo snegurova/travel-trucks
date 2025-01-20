@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './Typography.module.css';
 import clsx from 'clsx';
 

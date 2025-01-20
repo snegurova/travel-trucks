@@ -1,0 +1,14 @@
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  display: flex;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: 20px;
+  background-color: var(--badges-color);
+  text-transform: capitalize;
+}

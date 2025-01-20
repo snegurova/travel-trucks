@@ -1,3 +1,9 @@
 .featured {
-  /* Styles for Featured, */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.featured:hover {
+  cursor: pointer;
 }

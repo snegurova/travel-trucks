@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './Featured.module.css';
 import { selectFavorites, toggleFavorite } from '../../redux/favoritesSlice';
+import HeartIcon from '../../icons/Heart';
 
 const Featured = (props) => {
   const { id } = props;
@@ -15,7 +16,9 @@ const Featured = (props) => {
   };
   return (
     <div onClick={onClick} className={styles.featured}>
-      {isFavorite ? 'F' : 'N'}
+      <HeartIcon
+        color={isFavorite ? 'var(--button-color)' : 'var(--main-color)'}
+      />
     </div>
   );
 };
