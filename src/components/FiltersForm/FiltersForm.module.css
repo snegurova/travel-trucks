@@ -1,0 +1,71 @@
+.filtersForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkboxLabel {
+  display: flex;
+  text-transform: capitalize;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 10px 15px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.checkboxLabel:hover {
+  border-color: #007bff;
+}
+
+.checkboxLabel input {
+  display: none; /* Hide the checkbox */
+}
+
+.checkboxLabel.checked {
+  border-color: #007bff;
+  background-color: #f0f8ff;
+  color: #007bff;
+}
+
+.checkboxLabel .icon {
+  font-size: 1.2rem;
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 10px 15px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.radioLabel:hover {
+  border-color: #007bff;
+}
+
+.radioLabel input {
+  display: none; /* Hide the radio input */
+}
+
+.radioLabel.selected {
+  border-color: #007bff;
+  background-color: #f0f8ff;
+  color: #007bff;
+}
+
+.radioLabel .icon {
+  font-size: 1.2rem;
+}

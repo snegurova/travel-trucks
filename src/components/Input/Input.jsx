@@ -1,11 +1,15 @@
-import React from 'react';
 import styles from './Input.module.css';
+import { Field } from 'formik';
 
-const Input = () => {
+const Input = (props) => {
+  const { placeHolder, withIcon, name } = props;
   return (
-    <div className={styles.Input}>
-      <Input />
-    </div>
+    <Field
+      type="text"
+      name={name}
+      className={styles.Input}
+      placeholder={placeHolder}
+    />
   );
 };
 

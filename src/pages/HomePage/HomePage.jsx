@@ -1,4 +1,3 @@
-import React from 'react';
 import Container from '../../components/Container/Container';
 import styles from './HomePage.module.css';
 import Typography from '../../components/Typography/Typography';

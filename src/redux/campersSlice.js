@@ -16,10 +16,15 @@ const campersSlice = createSlice({
   name: 'campers',
   initialState: {
     items: [],
+    total: null,
     status: 'idle',
     error: null,
   },
-  reducers: {},
+  reducers: {
+    clearItems: (state) => {
+      state.items = [];
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchCampers.pending, (state) => {
@@ -27,7 +32,12 @@ const campersSlice = createSlice({
       })
       .addCase(fetchCampers.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        state.items = action.payload;
+        if (action.meta.arg.page > 1) {
+          state.items.push(...action.payload.items);
+        } else {
+          state.items = action.payload.items;
+        }
+        state.total = action.payload.total;
       })
       .addCase(fetchCampers.rejected, (state, action) => {
         state.status = 'failed';
@@ -35,5 +45,12 @@ const campersSlice = createSlice({
       });
   },
 });
+
+export const { clearItems } = campersSlice.actions;
+
+export const selectCampers = (state) => state.campers.items;
+export const selectTotal = (state) => state.campers.total;
+export const selectLoading = (state) => state.campers.loading;
+export const selectError = (state) => state.campers.error;
 
 export default campersSlice.reducer;
