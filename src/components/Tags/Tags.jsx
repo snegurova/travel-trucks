@@ -86,7 +86,7 @@ const Tags = (props) => {
   return (
     <div className={styles.tags}>
       {tags.map(({ isShown, icon, label }) => (
-        <>
+        <div key={label}>
           {isShown && (
             <div className={styles.tag}>
               {icon}
@@ -95,7 +95,7 @@ const Tags = (props) => {
               </Typography>
             </div>
           )}
-        </>
+        </div>
       ))}
     </div>
   );

@@ -15,6 +15,7 @@ import Button from '../Button/Button';
 import Input from '../Input/Input';
 import styles from './FiltersForm.module.css';
 import { useId } from 'react';
+import Typography from '../Typography/Typography';
 
 const FiltersForm = () => {
   const filters = useSelector(selectFilters);
@@ -78,9 +79,16 @@ const FiltersForm = () => {
     <Formik initialValues={initialValues} onSubmit={handleSearch}>
       <Form className={styles.filtersForm}>
         <label htmlFor={locationId} className={styles.label}>
-          Location
+          <Typography variant="body2" color="gray">
+            Location
+          </Typography>
         </label>
-        <Input placeHolder="Kyiv, Ukraine" name="location" />
+        <Input
+          placeHolder="Kyiv, Ukraine"
+          name="location"
+          withIcon
+          id={locationId}
+        />
         <fieldset className={styles.fieldset}>
           <legend className={styles.legend}>Vehicle Equipment</legend>
           {equipmentFilters.map(({ name, icon }) => (

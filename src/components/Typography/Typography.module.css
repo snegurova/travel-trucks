@@ -37,3 +37,6 @@
 .heading {
   color: var(--input-color);
 }
+.gray {
+  color: var(--gray);
+}

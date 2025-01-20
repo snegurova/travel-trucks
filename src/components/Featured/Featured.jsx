@@ -8,7 +8,6 @@ const Featured = (props) => {
 
   const dispatch = useDispatch();
   const favorites = useSelector(selectFavorites);
-  console.log(favorites);
 
   const isFavorite = favorites.find((item) => item.id === id);
   const onClick = () => {

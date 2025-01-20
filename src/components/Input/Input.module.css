@@ -1,3 +1,31 @@
-.Input {
-  /* Styles for Input */
+.wrapper {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  top: 18px;
+  left: 20px;
+}
+
+.input {
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  padding: 18px;
+  color: var(--main-color);
+  background-color: var(--input-color);
+  width: 100%;
+}
+
+.input:focus {
+  border: none;
+}
+
+::placeholder {
+  color: var(--gray);
+}
+
+.withIcon {
+  padding-left: 44px;
 }

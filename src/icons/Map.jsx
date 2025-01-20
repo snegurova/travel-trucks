@@ -1,5 +1,5 @@
 const MapIcon = (props) => {
-  const { color = 'var(--main-color)' } = props;
+  const { color = 'var(--main-color)', className } = props;
   return (
     <svg
       width="20"
@@ -7,6 +7,7 @@ const MapIcon = (props) => {
       viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
     >
       <path
         fillRule="evenodd"
