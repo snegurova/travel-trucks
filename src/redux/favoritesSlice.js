@@ -7,8 +7,6 @@ const favoritesSlice = createSlice({
   },
   reducers: {
     toggleFavorite: (state, action) => {
-      console.log(state);
-
       if (!state.items.find((item) => item.id === action.payload.id)) {
         state.items.push(action.payload);
       } else {
