@@ -1,10 +1,9 @@
-import React from 'react';
 import styles from './CampersList.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectCampers, selectTotal } from '../../redux/campersSlice';
 import CamperCard from '../CamperCard/CamperCard';
 import Button from '../Button/Button';
-import { selectFilters, setLimit, setPage } from '../../redux/filtersSlice';
+import { selectFilters, setPage } from '../../redux/filtersSlice';
 
 const CampersList = () => {
   const campers = useSelector(selectCampers);
@@ -24,7 +23,12 @@ const CampersList = () => {
         ))}
       </div>
       {isLoadMore && (
-        <Button type="button" onClick={onClick}>
+        <Button
+          isSecondary
+          className={styles.loadMore}
+          type="button"
+          onClick={onClick}
+        >
           Load more
         </Button>
       )}
