@@ -41,6 +41,10 @@ const campersSlice = createSlice({
       })
       .addCase(fetchCampers.rejected, (state, action) => {
         state.status = 'failed';
+        state.items = [];
+        state.total = null;
+        console.log('404');
+
         state.error = action.error.message;
       });
   },

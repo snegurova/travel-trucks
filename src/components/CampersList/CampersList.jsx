@@ -18,9 +18,11 @@ const CampersList = () => {
   return (
     <div>
       <div className={styles.campersList}>
-        {campers.map((camper) => (
-          <CamperCard key={camper.id} camper={camper} />
-        ))}
+        {campers.length > 0 &&
+          campers.map((camper) => (
+            <CamperCard key={camper.id} camper={camper} />
+          ))}
+        {campers.length === 0 && <div>Nothing found by your request</div>}
       </div>
       {isLoadMore && (
         <Button
