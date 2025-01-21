@@ -111,7 +111,9 @@ const CamperDetailsPage = () => {
                     consumption={camper.consumption}
                   />
                 )}
-                {activeTab === 'reviews' && <Reviews />}
+                {activeTab === 'reviews' && (
+                  <Reviews reviews={camper.reviews} />
+                )}
                 <div className={styles.bookingForm}></div>
               </div>
             </div>
