@@ -9,18 +9,23 @@ import { useFormatPrice } from '../../hooks/hooks';
 import Features from '../../components/Features/Features';
 import Reviews from '../../components/Reviews/Reviews';
 import clsx from 'clsx';
+import BookingForm from '../../components/BookingForm/BookingForm';
+import Loader from '../../components/Loader/Loader';
 
 const CamperDetailsPage = () => {
   const [camper, setCamper] = useState(null);
   const [error, setError] = useState(null);
+  const [loading, setIsLoading] = useState(false);
   const { id } = useParams();
   const formattedPrice = useFormatPrice(camper?.price);
   const [activeTab, setActiveTab] = useState('features');
   useEffect(() => {
     const fetch = async () => {
       try {
+        setIsLoading(true);
         const camper = await fetchCamper(id);
         setCamper(camper);
+        setIsLoading(false);
       } catch {
         setError('There was some problem');
       }
@@ -30,6 +35,7 @@ const CamperDetailsPage = () => {
   return (
     <Container>
       <div className={styles.wrapper}>
+        {loading && <Loader />}
         {error && <div>{error}</div>}
         {camper && (
           <>
@@ -114,7 +120,9 @@ const CamperDetailsPage = () => {
                 {activeTab === 'reviews' && (
                   <Reviews reviews={camper.reviews} />
                 )}
-                <div className={styles.bookingForm}></div>
+                <div className={styles.bookingForm}>
+                  <BookingForm />
+                </div>
               </div>
             </div>
           </>

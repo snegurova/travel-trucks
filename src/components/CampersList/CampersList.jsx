@@ -8,7 +8,7 @@ import {
 } from '../../redux/campersSlice';
 import CamperCard from '../CamperCard/CamperCard';
 import Button from '../Button/Button';
-import { TailSpin } from 'react-loader-spinner';
+import Loader from '../../components/Loader/Loader';
 import { selectFilters, setPage } from '../../redux/filtersSlice';
 
 const CampersList = () => {
@@ -16,7 +16,6 @@ const CampersList = () => {
   const filters = useSelector(selectFilters);
   const total = useSelector(selectTotal);
   const loading = useSelector(selectLoading);
-  console.log(loading);
 
   const error = useSelector(selectError);
   const dispatch = useDispatch();
@@ -35,11 +34,7 @@ const CampersList = () => {
         {campers.length === 0 && error && (
           <div>Nothing found by your request</div>
         )}
-        {loading && (
-          <div className={styles.loading}>
-            <TailSpin height={50} width={50} color="var(--main-color)" />
-          </div>
-        )}
+        {loading && <Loader />}
       </div>
       {isLoadMore && (
         <Button
