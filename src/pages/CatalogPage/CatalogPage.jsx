@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import styles from './CatalogPage.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearItems, fetchCampers } from '../../redux/campersSlice';

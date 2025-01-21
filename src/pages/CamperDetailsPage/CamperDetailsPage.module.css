@@ -1,0 +1,54 @@
+.wrapper {
+  padding: 48px 0 80px;
+}
+
+.heading {
+  margin-bottom: 8px;
+}
+
+.price {
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 48px;
+}
+
+.image {
+  height: 312px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.description {
+  margin-top: 28px;
+  margin-bottom: 60px;
+}
+
+.tabButtons {
+  display: flex;
+  border-bottom: 1px solid var(--gray-light);
+  gap: 40px;
+}
+
+.tab {
+  padding-bottom: 24px;
+  cursor: pointer;
+  border-bottom: 5px solid transparent;
+  transition: border-bottom 0.5s ease;
+}
+
+.tab:hover {
+  border-bottom: 5px solid var(--button-color);
+}
+
+.tab.active {
+  border-bottom: 5px solid var(--button-color);
+}
+
+.tabContent {
+  padding-top: 44px;
+}

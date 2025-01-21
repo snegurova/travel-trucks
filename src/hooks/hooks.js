@@ -1,3 +1,3 @@
 export const useFormatPrice = (price) => {
-  return `€${price},00`;
+  return price ? `€${price},00` : '';
 };
