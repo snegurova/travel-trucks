@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import ACIcon from '../../icons/AC';
 import BathroomIcon from '../../icons/Bathroom';
 import EngineIcon from '../../icons/Engine';
@@ -25,6 +26,7 @@ const Tags = (props) => {
     microwave,
     gas,
     water,
+    isFeatures,
   } = props;
   const tags = [
     {
@@ -85,18 +87,23 @@ const Tags = (props) => {
   ];
   return (
     <div className={styles.tags}>
-      {tags.map(({ isShown, icon, label }) => (
-        <div key={label}>
-          {isShown && (
-            <div className={styles.tag}>
+      {tags.map(({ isShown, icon, label }) => {
+        return (
+          isShown && (
+            <div
+              key={`${label}-tag`}
+              className={clsx(styles.tag, {
+                [styles.features]: isFeatures,
+              })}
+            >
               {icon}
               <Typography variant="body2" color="main">
                 {label}
               </Typography>
             </div>
-          )}
-        </div>
-      ))}
+          )
+        );
+      })}
     </div>
   );
 };

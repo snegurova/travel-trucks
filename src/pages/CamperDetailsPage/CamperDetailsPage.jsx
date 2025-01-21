@@ -6,6 +6,8 @@ import { useParams } from 'react-router-dom';
 import Typography from '../../components/Typography/Typography';
 import Info from '../../components/Info/Info';
 import { useFormatPrice } from '../../hooks/hooks';
+import Features from '../../components/Features/Features';
+import Reviews from '../../components/Reviews/Reviews';
 import clsx from 'clsx';
 
 const CamperDetailsPage = () => {
@@ -89,17 +91,28 @@ const CamperDetailsPage = () => {
               </div>
               <div className={styles.tabContent}>
                 {activeTab === 'features' && (
-                  <div>
-                    <h2>Features</h2>
-                    <p>This section contains the features of the product.</p>
-                  </div>
+                  <Features
+                    transmission={camper.transmission}
+                    engine={camper.engine}
+                    AC={camper.AC}
+                    bathroom={camper.bathroom}
+                    kitchen={camper.kitchen}
+                    TV={camper.TV}
+                    radio={camper.radio}
+                    refrigerator={camper.refrigerator}
+                    microwave={camper.microwave}
+                    gas={camper.gas}
+                    water={camper.water}
+                    form={camper.form}
+                    length={camper.length}
+                    width={camper.width}
+                    height={camper.height}
+                    tank={camper.tank}
+                    consumption={camper.consumption}
+                  />
                 )}
-                {activeTab === 'reviews' && (
-                  <div>
-                    <h2>Reviews</h2>
-                    <p>This section contains user reviews of the product.</p>
-                  </div>
-                )}
+                {activeTab === 'reviews' && <Reviews />}
+                <div className={styles.bookingForm}></div>
               </div>
             </div>
           </>

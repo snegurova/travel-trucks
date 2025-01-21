@@ -12,3 +12,7 @@
   background-color: var(--badges-color);
   text-transform: capitalize;
 }
+
+.features {
+  background-color: #eeeeee;
+}
