@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const Logo = () => {
   const [color, setColor] = useState('var(--text-color)');
-  const onMouseOver = () => setColor('var(--button-hover)');
+  const onMouseOver = () => setColor('var(--gray)');
   const onMouseOut = () => setColor('var(--text-color)');
 
   return (

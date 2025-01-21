@@ -1,4 +1,4 @@
-.label {
+.inputLabel {
   margin-bottom: 8px;
 }
 
@@ -7,69 +7,66 @@
   flex-direction: column;
 }
 
-.checkboxLabel {
+.filtersTitle {
+  margin-top: 40px;
+  margin-bottom: 32px;
+}
+
+.fieldset {
+  border: none;
+  padding: 0;
+  margin-bottom: 32px;
+}
+
+.legend {
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--gray-light);
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.filtersWrapper {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(112px, 1fr));
+  gap: 12px;
+}
+
+.label {
   display: flex;
+  flex-direction: column;
   text-transform: capitalize;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  padding: 10px 15px;
-  border: 2px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
-  font-weight: bold;
+  text-align: center;
+  min-height: 98px;
+  gap: 2px;
+  border: 1px solid var(--gray-light);
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.005em;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: border-color 0.5s ease;
   user-select: none;
 }
 
-.checkboxLabel:hover {
-  border-color: #007bff;
+.label:hover {
+  border-color: var(--button-color);
 }
 
-.checkboxLabel input {
-  display: none; /* Hide the checkbox */
+.label input {
+  display: none;
 }
 
-.checkboxLabel.checked {
-  border-color: #007bff;
-  background-color: #f0f8ff;
-  color: #007bff;
+.label.checked {
+  border-color: var(--button-color);
 }
 
-.checkboxLabel .icon {
+.label .icon {
   font-size: 1.2rem;
 }
 
-.radioLabel {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 10px 15px;
-  border: 2px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  user-select: none;
-}
-
-.radioLabel:hover {
-  border-color: #007bff;
-}
-
-.radioLabel input {
-  display: none; /* Hide the radio input */
-}
-
-.radioLabel.selected {
-  border-color: #007bff;
-  background-color: #f0f8ff;
-  color: #007bff;
-}
-
-.radioLabel .icon {
-  font-size: 1.2rem;
+.searchButton {
+  margin-top: 40px;
+  align-self: start;
 }

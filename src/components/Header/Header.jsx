@@ -1,9 +1,8 @@
-import React from 'react';
-import clsx from 'clsx';
 import styles from './Header.module.css';
 import Logo from '../../icons/Logo';
 import Navigation from '../Navigation/Navigation';
 import Container from '../Container/Container';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -11,7 +10,9 @@ const Header = () => {
       <Container>
         <div className={styles.headerWrapper}>
           <div className={styles.logo}>
-            <Logo />
+            <Link to="/">
+              <Logo />
+            </Link>
           </div>
           <div className={styles.navigation}>
             <Navigation />

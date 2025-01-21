@@ -16,6 +16,15 @@ import Input from '../Input/Input';
 import styles from './FiltersForm.module.css';
 import { useId } from 'react';
 import Typography from '../Typography/Typography';
+import clsx from 'clsx';
+import ACIcon from '../../icons/AC';
+import TransmissionIcon from '../../icons/Transmission';
+import KitchenIcon from '../../icons/Kitchen';
+import TVIcon from '../../icons/TV';
+import BathroomIcon from '../../icons/Bathroom';
+import VanIcon from '../../icons/Van';
+import FullyIcon from '../../icons/Fully';
+import AlcoveIcon from '../../icons/Alcove';
 
 const FiltersForm = () => {
   const filters = useSelector(selectFilters);
@@ -51,34 +60,47 @@ const FiltersForm = () => {
   const equipmentFilters = [
     {
       name: 'AC',
-      icon: '✔️',
+      icon: <ACIcon width="32" height="32" />,
     },
     {
       name: 'transmission',
-      icon: '✔️',
+      label: 'automatic',
+      icon: <TransmissionIcon width="32" height="32" />,
     },
     {
       name: 'kitchen',
-      icon: '✔️',
+      icon: <KitchenIcon width="32" height="32" />,
     },
     {
       name: 'TV',
-      icon: '✔️',
+      icon: <TVIcon width="32" height="32" />,
     },
     {
       name: 'bathroom',
-      icon: '✔️',
+      icon: <BathroomIcon width="32" height="32" />,
     },
   ];
   const typeFilters = [
-    { value: 'panelTruck', label: 'Van', icon: '🚗' },
-    { value: 'fullyIntegrated', label: 'Fully Integrated', icon: '🚗' },
-    { value: 'alcove', label: 'Alcove', icon: '🚗' },
+    {
+      value: 'panelTruck',
+      label: 'Van',
+      icon: <VanIcon width="32" height="32" />,
+    },
+    {
+      value: 'fullyIntegrated',
+      label: 'Fully Integrated',
+      icon: <FullyIcon width="26" height="26" />,
+    },
+    {
+      value: 'alcove',
+      label: 'Alcove',
+      icon: <AlcoveIcon width="28" height="28" />,
+    },
   ];
   return (
     <Formik initialValues={initialValues} onSubmit={handleSearch}>
       <Form className={styles.filtersForm}>
-        <label htmlFor={locationId} className={styles.label}>
+        <label htmlFor={locationId} className={styles.inputLabel}>
           <Typography variant="body2" color="gray">
             Location
           </Typography>
@@ -89,43 +111,60 @@ const FiltersForm = () => {
           withIcon
           id={locationId}
         />
+        <Typography
+          className={styles.filtersTitle}
+          variant="body2"
+          color="text"
+        >
+          Filters
+        </Typography>
         <fieldset className={styles.fieldset}>
-          <legend className={styles.legend}>Vehicle Equipment</legend>
-          {equipmentFilters.map(({ name, icon }) => (
-            <Field name={name} key={name}>
-              {({ field }) => (
-                <label
-                  className={`${styles.checkboxLabel} ${
-                    field.value ? styles.checked : ''
-                  }`}
-                >
-                  <span className={styles.icon}>{icon}</span>
-                  {name}
-                  <input type="checkbox" {...field} />
-                </label>
-              )}
-            </Field>
-          ))}
+          <Typography variant="h3" component="legend" className={styles.legend}>
+            Vehicle Equipment
+          </Typography>
+          <div className={styles.filtersWrapper}>
+            {equipmentFilters.map(({ name, icon, label }) => (
+              <Field name={name} key={name}>
+                {({ field }) => (
+                  <label
+                    className={clsx(styles.label, {
+                      [styles.checked]: field.value,
+                    })}
+                  >
+                    <span className={styles.icon}>{icon}</span>
+                    {label || name}
+                    <input type="checkbox" {...field} />
+                  </label>
+                )}
+              </Field>
+            ))}
+          </div>
         </fieldset>
         <fieldset className={styles.fieldset}>
-          <legend className={styles.legend}>Vehicle Type</legend>
-          {typeFilters.map(({ value, label, icon }) => (
-            <Field name="form" key={value}>
-              {({ field }) => (
-                <label
-                  className={`${styles.radioLabel} ${
-                    field.value === value ? styles.selected : ''
-                  }`}
-                >
-                  <span className={styles.icon}>{icon}</span>
-                  {label}
-                  <input type="radio" {...field} value={value} />
-                </label>
-              )}
-            </Field>
-          ))}
+          <Typography variant="h3" component="legend" className={styles.legend}>
+            Vehicle Type
+          </Typography>
+          <div className={styles.filtersWrapper}>
+            {typeFilters.map(({ value, label, icon }) => (
+              <Field name="form" key={value}>
+                {({ field }) => (
+                  <label
+                    className={clsx(styles.label, {
+                      [styles.checked]: field.value === value,
+                    })}
+                  >
+                    <span className={styles.icon}>{icon}</span>
+                    {label}
+                    <input type="radio" {...field} value={value} />
+                  </label>
+                )}
+              </Field>
+            ))}
+          </div>
         </fieldset>
-        <Button type="submit">Search</Button>
+        <Button className={styles.searchButton} type="submit">
+          Search
+        </Button>
       </Form>
     </Formik>
   );
