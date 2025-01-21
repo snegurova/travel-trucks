@@ -4,7 +4,7 @@ import MapIcon from '../../icons/Map';
 import clsx from 'clsx';
 
 const Input = (props) => {
-  const { placeHolder, withIcon, name, id } = props;
+  const { placeHolder, withIcon, name, id, type = 'text', ...attr } = props;
   return (
     <Field name={name}>
       {({ field }) => (
@@ -17,11 +17,12 @@ const Input = (props) => {
           )}
           <input
             id={id}
-            type="text"
+            type={type}
             className={clsx(styles.input, {
               [styles.withIcon]: withIcon,
             })}
             {...field}
+            {...attr}
             placeholder={placeHolder}
           />
         </div>

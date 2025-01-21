@@ -1,3 +1,41 @@
+.wrapper {
+  padding: 44px 57px;
+  border: 1px solid var(--gray-light);
+  border-radius: 10px;
+}
+
 .bookingForm {
-  /* Styles for BookingForm */
+  margin-top: 24px;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.error {
+  color: var(--button-hover);
+}
+
+.input {
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  padding: 18px;
+  color: var(--main-color);
+  background-color: var(--input-color);
+  width: 100%;
+}
+
+.input:focus {
+  border: none;
+}
+
+::placeholder {
+  color: var(--gray);
+}
+
+.sendButton {
+  margin-top: 28px;
 }

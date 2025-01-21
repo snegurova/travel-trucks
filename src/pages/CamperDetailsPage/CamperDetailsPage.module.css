@@ -55,7 +55,3 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 40px;
 }
-
-.bookingForm {
-  height: 598px;
-}

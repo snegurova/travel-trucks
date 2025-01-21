@@ -120,9 +120,7 @@ const CamperDetailsPage = () => {
                 {activeTab === 'reviews' && (
                   <Reviews reviews={camper.reviews} />
                 )}
-                <div className={styles.bookingForm}>
-                  <BookingForm />
-                </div>
+                <BookingForm />
               </div>
             </div>
           </>

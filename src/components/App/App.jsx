@@ -4,10 +4,12 @@ import { Route, Routes } from 'react-router-dom';
 import HomePage from '../../pages/HomePage/HomePage';
 import CatalogPage from '../../pages/CatalogPage/CatalogPage';
 import CamperDetailsPage from '../../pages/CamperDetailsPage/CamperDetailsPage';
+import { Toaster } from 'react-hot-toast';
 
 const App = () => {
   return (
     <>
+      <Toaster position="bottom-right" />
       <Header />
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
